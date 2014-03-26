@@ -40,10 +40,15 @@ from the staggered propagator, i.\ e.\ a 4-component object,
 and also many useful details regarding the fit-forms of the two-pt functions.  I think is just the inverse
 of the Wilson $\rightarrow$ staggered transformation, and it is implemented in {\tt inline\_stag\_to\_wils.cc} in Chroma.
 
+
+%---- Overlap propagators. ----
 \subsection{Overlap on HISQ propagators - Measurement Strategy}
 I am successfully parsing the overlap propagators, with results for pion correlators that agree
 with Nilmani for both single and double mass propagators.  We need to discuss what all data is available and where (including what I may have already), and how much of that we want to run the measurements on..
-\subsection{HISQ propagators}
+
+
+%---- HISQ propagators. ----
+\subsection{HISQ propagators.}
 Right now we are looking at the $24^3 \times 64$ HISQ ensembles with dynamical charm~\cite{Bazavov:2012xda}.
 We have unitary propagators for the following masses (cf  Table IX p.16):
 \begin{verbatim}
@@ -68,6 +73,29 @@ when including the charm mass clearly~\ref{ss'} breaks down.}
 
 HISQ propagators are constructed using a ``corner wall" source.  This source is 1 at all sites
 $\{ (\mathbf{x}, t) \, | \, \mathbf{x} \% 2 = \mathbf{0} \text{ and } t = t_0\}$.
+
+%---- Mixed action propagators. ----
+\subsection{Mixed action propagators.}
+The \emph{Wilsonized} staggered propagator is given by the relation
+\begin{equation}
+D_{\psi_s}(x;y) = \Omega(x) \Omega^{\+}(y) D_{\chi}(x;y) \,,
+\end{equation}
+where $\Omega(x) = \prod_{\mu} (\gamma_\mu)^{x_\mu}$ is the Kawamoto-Smit transformation
+and $D_{\chi}(x;y)$ is the naive staggered propagator.
+All of the spin degrees of freedom are contained in the product of $\Omega$s.
+
+In order to combine the Wilsonized propagator with the overlap propagator,
+we need to ensure that both propagators share the same $\gamma$ conventions.
+The overlap propagators are written (and read) using the Kentucky convention.
+The only remnant of gamma matrices in the staggered propagator is via the staggered
+phase conventions $\eta_\mu(x)$.  
+These are equivalent to specifying precisely the Kawamoto-Smit transformation,
+but do \emph{not} depend on the gamma convention used.  
+Thus we need to ensure the correct ordering of the gammas in $\Omega(x)$,
+ where the gamma matrix conventions are taken as Kentucky.
+ There is an implementation of the conversion in MILC v7 {\tt staggered2naive.c}.
+ For now I am assuming that the correct transformation follows that, 
+ i.e.\ the HISQ phase conventions for the lattices I have follow that indicated here in the MILC code.
 
 %-------------------Bibliography-------------------
 
