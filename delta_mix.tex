@@ -21,7 +21,7 @@ We have in mind something along the lines of~\cite{Lujan:2012wg} which looks at 
 on domain-wall.  The ``master formula'' involves pseudoscalar meson masses determined
 using propagators calculated from both valence and sea Dirac operators.
 A similar approach is used in~\cite{Aubin:2008wk} for domain-wall on asqtad.
-The determination of $a^2 \Delta_\text{mix}$ extends the work of~\cite{Orginos:2007tw} to the fine asqtad ensemble.
+The determination of $a^2 \Dmix$ extends the work of~\cite{Orginos:2007tw} to the fine asqtad ensemble.
 The prior work computed on only the coarse and uses yet another parametrization which 
 appears well-justified based on that paper's discussion.
 For overlap on HISQ the pseudoscalar
@@ -29,7 +29,7 @@ masses at LO are given as:
 \begin{align}
 m^2_{vv'} &= B_{\text{ov}} (m_v + m_{v'}) \label{vv'} \\
 m^2_{ss'} &= B_{\text{HISQ}}(m_s + m_{s'}) + a^2 \Delta_{t} \label{ss'}\\
-m^2_{vs} &= B_{\text{ov}} m_v + B_{\text{HISQ}} m_s + a^2 \Delta_\text{mix} \label{vs}
+m^2_{vs} &= B_{\text{ov}} m_v + B_{\text{HISQ}} m_s + a^2 \Dmix \label{vs}
 \end{align}
 $\Delta_t$ measures taste-breaking and in particular vanishes for the taste-5 GB pion.
 I am unclear on whether there is an additional $\Delta_{\text{sea}}$ term
@@ -124,9 +124,30 @@ Thus we need to ensure the correct ordering of the gammas in $\Omega(x)$,
  There is an implementation of the conversion in MILC v7 {\tt staggered2naive.c}.
  For now I am assuming that the correct transformation follows that, 
  i.e.\ the HISQ phase conventions for the lattices I have follow that indicated here in the MILC code.
-
+ 
+ 
+  \begin{figure}[h]
+ \centering
+ \includegraphics[width=\textwidth]{HOpion_m0102_m0731.pdf}
+ \caption{}
+ \end{figure}
+ 
+ \begin{figure}[h]
+ \centering
+ \includegraphics[width=\textwidth]{HOpion_m0509_m0731.pdf}
+ \caption{}
+ \end{figure}
+ 
+  \begin{figure}[h]
+ \centering
+ \includegraphics[width=\textwidth]{HOpion_m635_m0731.pdf}
+ \caption{}
+ \end{figure}
+ 
+ \clearpage
 %---- Appendix ----
 \section{Appendix} 
+Based on email with Nilmani (Apr 27, 2014) and prior emails with Padmanath.\\
 See also notebook {\tt gamma\_conventions.nb}.\\
 (anti)MILC conventions, used for inverting the overlap operator:
 \begin{equation}
@@ -165,7 +186,12 @@ See also notebook {\tt gamma\_conventions.nb}.\\
 \end{split}
 \end{equation}
 Kentucky conventions, used for writing the overlap propagator:\\
-$\gamma_{1,2,3}$ are same as anti-MILC, while:
+\begin{align}
+\g_{1,\text{K}} &= \g_{1,\text{aM}} \\
+\g_{2,\text{K}} &= - \g_{2,\text{aM}} \\
+\g_{3,\text{K}} &= \g_{3,\text{aM}} 
+\end{align}
+
 \begin{equation}
 \gamma_4 =
 \begin{pmatrix}
