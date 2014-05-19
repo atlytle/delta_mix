@@ -93,7 +93,7 @@ I would like to understand this better.
 In practice I still fit the standard cosh form because I think the oscillating state has a much higher mass. Preliminary results for all combination of HISQ masses are in Fig.~\ref{HH_pseudo}.% and [].
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{HH_pseudo}
+\includegraphics[width=.8\textwidth]{HH_pseudo}
 \caption{HISQ valence on HISQ sea.  We see flat behavior in the pion-kaon mass range, whereas
 when including the charm mass clearly~\ref{ss'} breaks down.}
 \label{HH_pseudo}
@@ -128,37 +128,63 @@ Thus we need to ensure the correct ordering of the gammas in $\Omega(x)$,
  
   \begin{figure}[h]
  \centering
- \includegraphics[width=\textwidth]{HOpion_m0102_m0731.pdf}
+ \includegraphics[width=.8\textwidth]{HOpion_m0102_m0731.pdf}
  \caption{}
  \end{figure}
  
  \begin{figure}[h]
  \centering
- \includegraphics[width=\textwidth]{HOpion_m0509_m0731.pdf}
+ \includegraphics[width=.8\textwidth]{HOpion_m0509_m0731.pdf}
  \caption{}
  \end{figure}
  
   \begin{figure}[h]
  \centering
- \includegraphics[width=\textwidth]{HOpion_m635_m0731.pdf}
+ \includegraphics[width=.8\textwidth]{HOpion_m635_m0731.pdf}
  \caption{}
  \end{figure}
  
 \begin{figure}[h]
  \centering
- \includegraphics[width=\textwidth]{mixed_mpi.pdf}
+ \includegraphics[width=.8\textwidth]{mixed_mpi.pdf}
  \caption{Preliminary plot of pion masses extracted from various mixed-action
  correlation functions.  Data involving charm is not included.}
 \end{figure}
 
 \begin{figure}[h]
  \centering
- \includegraphics[width=\textwidth]{mixed_mpi2.pdf}
+ \includegraphics[width=.8\textwidth]{mixed_mpi2.pdf}
  \caption{Preliminary plot of pion masses extracted from various mixed-action
  correlation functions. 
  The masses are (HISQ, ov): (0102, 0165), (0509, 0165), (0102, 0731), (0509, 0731).
  For some reason $\rho_x$ data was very noisy for lightest
  two points and I threw it out.}
+\end{figure}
+
+\clearpage
+
+%---- Measuring Delta_mix ----
+\subsection{Measuring $\Dmix$.}
+Combining Eqs.~\eqref{ss'} and~\eqref{vs} we have
+\begin{equation}
+\delta m^2 \equiv m^2_{vs} - m^2_{ss}/2 = B_{\text{ov}} m_v + a^2 \Dmix \, ,
+\end{equation}
+so that one can try to read off $a^2 \Dmix$ from the intercept of $\delta m^2(m_v)$. 
+This is the measurement approach taken in~\cite{Lujan:2012wg}.
+One could alternatively look at 
+$\delta' m^2(m_s)  \equiv m^2_{vs} - m^2_{vv}/2$ (e.g.~\cite{Aubin:2008wk})
+or the quantity $\Delta m^2 \equiv m^2_{vs} - m^2_{vv} - m^2_{ss}$ (e.g.~\cite{Orginos:2007tw}).
+Presumably these approaches are equivalent.  
+Figure~\ref{fig:delta_msq} shows a preliminary plot of $\delta m^2(m_v)$.
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{delta_msq.pdf}
+\caption{(Very) preliminary determination of $a^2 \Dmix$ from the $24^3$ ensemble, using
+two different values of the HISQ mass $m_s$. The data points are correlated, which
+iss not taken account in the straight-line fit, and the pion masses themselves were determined
+using uncorrelated fits.  Nevertheless the data is well-approximated by a straight line, is
+insensitive to $m_s$, and has a small but non-zero intercept.} 
+\label{fig:delta_msq}
 \end{figure}
 
  
