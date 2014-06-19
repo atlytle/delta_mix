@@ -70,9 +70,19 @@ of the Wilson $\rightarrow$ staggered transformation, and it is implemented in {
 
 
 %---- Overlap propagators. ----
-\subsection{Overlap on HISQ propagators - Measurement Strategy}
+\subsection{Overlap on HISQ propagators}
+\subsubsection{Measurement Strategy}
 I am successfully parsing the overlap propagators, with results for pion correlators that agree
 with Nilmani for both single and double mass propagators.  We need to discuss what all data is available and where (including what I may have already), and how much of that we want to run the measurements on..
+
+For the time being I have chosen masses 
+0.001000, 0.002000, 0.006000, 0.009000, 0.016500, 0.024000, 0.038000, 0.073100, 0.525000.
+These provide a good range and had the most available configurations on {\tt wilson}.
+These I have transferred to {\tt overlap/} directory of {\tt brood}.
+Ajay collected additional propagators from various directories on BG/P, and I have symlinked
+those with the appropriate masses into {\tt overlap/}.
+
+\subsubsection{Results}
 
 
 %---- HISQ propagators. ----
@@ -185,6 +195,12 @@ iss not taken account in the straight-line fit, and the pion masses themselves w
 using uncorrelated fits.  Nevertheless the data is well-approximated by a straight line, is
 insensitive to $m_s$, and has a small but non-zero intercept.} 
 \label{fig:delta_msq}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{delta_msq_correlated.pdf}
+\caption{Error bars calculated via correlated jackknife; results scaled by factors of $r_1/a$.}
 \end{figure}
 
  
